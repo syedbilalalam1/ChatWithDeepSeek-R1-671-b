@@ -45,6 +45,33 @@ module.exports = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      keyframes: {
+        'slide-from-left': {
+          '0%': { transform: 'translateX(-100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        'slide-from-right': {
+          '0%': { transform: 'translateX(100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        'bounce': {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-25%)',
+          },
+        },
+      },
+      animation: {
+        'slide-from-left': 'slide-from-left 0.3s ease-out',
+        'slide-from-right': 'slide-from-right 0.3s ease-out',
+        'fade-in': 'fade-in 0.2s ease-out',
+      },
     },
   },
   plugins: [],
