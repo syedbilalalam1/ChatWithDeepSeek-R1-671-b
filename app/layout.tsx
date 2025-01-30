@@ -1,20 +1,51 @@
-import { cn } from "@/lib/utils"
-import { TooltipProvider } from "@/components/ui/tooltip"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import type { ReactNode } from "react"
+import { TooltipProvider } from "@/components/ui/tooltip"
+import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "OpenAI and AI SDK Chatbot",
-  description: "A simple chatbot built using the AI SDK and gpt-4o-mini.",
+export const metadata: Metadata = {
+  title: "DeepSeek R1 Chat | by Syed Bilal Alam",
+  description: "Experience the power of DeepSeek's R1 model - a state-of-the-art open-source LLM that rivals GPT-4!",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        href: "/favicon.ico",
+      }
+    ],
+  },
+  authors: [
+    {
+      name: "Syed Bilal Alam",
+      url: "https://github.com/syedbilalalam1",
+    }
+  ],
+  keywords: [
+    "DeepSeek",
+    "R1",
+    "AI",
+    "Chat",
+    "LLM",
+    "GPT",
+    "OpenRouter",
+    "Next.js",
+    "React",
+  ],
 }
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={cn("flex min-h-svh flex-col antialiased", inter.className)}>
-        <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+      <body className={inter.className}>
+        <TooltipProvider delayDuration={0}>
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   )
